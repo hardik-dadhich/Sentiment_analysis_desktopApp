@@ -1,0 +1,32 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>blueBg.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>twitter.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>facebook.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>instagram.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>User-Login-128.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>Login-01-128.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>analytical.png</file>
+	<file>anger.png</file>
+	<file>confident.png</file>
+	<file>fear.png</file>
+	<file>joy.png</file>
+    <file>sadness.png</file>
+	<file>tentative.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>watsonLogo.jpeg</file>
+  </qresource>
+</RCC>
