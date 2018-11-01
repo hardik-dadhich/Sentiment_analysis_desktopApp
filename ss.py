@@ -45,8 +45,8 @@ class TwitterClient:
         # data = pd.DataFrame(data=[tweet.text for tweet in tweets[:5]], columns=['Tweets'])
         # We display the first 10 elements of the dataframe:
         print("----------------------------")
-        print(data[1])
-        return data[1]
+        print(data[0])
+        return data[0]
 
 
 if __name__ == '__main__':

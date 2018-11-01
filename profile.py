@@ -59,7 +59,14 @@ class Ui_MainWindow(object):
         fb_link = self.fbInp.text()
         twitter_link = self.twitterInp.text()
         print(insta_link, fb_link, twitter_link)
-        self.query = "INSERT INTO WKG83160.LINKS(instagram, facebook, twitter) VALUES ('%s', '%s', '%s')"%(insta_link,fb_link,twitter_link)
+        query_for_id_fetch = "Select id from WKG83160.USERS1 where USERNAME='%s'" % (self.main_res["USERNAME"])
+        print(query_for_id_fetch)
+        stmt1 = ibm_db.exec_immediate(conn, query_for_id_fetch)
+        print(stmt1)
+        ress = ibm_db.fetch_both(stmt1)
+        print(ress['ID'])
+        id_fetched = str(ress['ID'])
+        self.query = "INSERT INTO WKG83160.LINKS(instagram, facebook, twitter, CUID) VALUES ('%s', '%s', '%s', '%s')"%(insta_link,fb_link,twitter_link, id_fetched)
         stmt = ibm_db.exec_immediate(conn, self.query)
         print(stmt)
         username_fetch = twitter_link.split('/')
@@ -67,7 +74,6 @@ class Ui_MainWindow(object):
         tweeter_username = username_fetch[-1]
         print("-----user name from profile page", tweeter_username)
         self.gotodashboard()
-
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")

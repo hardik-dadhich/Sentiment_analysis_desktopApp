@@ -11,7 +11,7 @@ from login import *
 import sqlite3
 import ibm_db
 import ibmdbpy
-
+from adminsignup import *
 
 class Ui_SignUp(object):
     conn = ""
@@ -58,6 +58,14 @@ class Ui_SignUp(object):
         self.uilogin.setupUiLogin(self.window)
         self.window.show()
 
+
+    def clickadmin(self):
+        self.window = QtWidgets.QMainWindow()
+        self.adminobj = Ui_MainWindowAdminSignUp()
+        self.adminobj.setupUiSignUp(self.window)
+        self.window.show()
+
+
     def setupUiSignUp(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
@@ -94,7 +102,7 @@ class Ui_SignUp(object):
         self.unameInp.setText("")
         self.unameInp.setObjectName("unameInp")
         self.loginBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.loginBtn.setGeometry(QtCore.QRect(220, 520, 112, 34))
+        self.loginBtn.setGeometry(QtCore.QRect(220, 520, 140, 34))
         #######################login button clicked############
         self.loginBtn.clicked.connect(self.clickLogin)
         #######################################################
@@ -104,7 +112,7 @@ class Ui_SignUp(object):
         self.loginBtn.setStyleSheet("color: rgb(255, 255, 255);")
         self.loginBtn.setObjectName("loginBtn")
         self.submitBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.submitBtn.setGeometry(QtCore.QRect(410, 520, 112, 34))
+        self.submitBtn.setGeometry(QtCore.QRect(410, 520, 150, 34))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.submitBtn.setFont(font)
@@ -162,7 +170,7 @@ class Ui_SignUp(object):
         self.contactLbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.contactLbl.setObjectName("contactLbl")
         self.resetBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.resetBtn.setGeometry(QtCore.QRect(590, 520, 112, 34))
+        self.resetBtn.setGeometry(QtCore.QRect(590, 520, 180, 34))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.resetBtn.setFont(font)
@@ -171,6 +179,9 @@ class Ui_SignUp(object):
         self.resetBtn.setDefault(False)
         self.resetBtn.setFlat(False)
         self.resetBtn.setObjectName("resetBtn")
+        ################# click on admin panel ############
+        self.resetBtn.clicked.connect(self.clickadmin)
+        ###################################################
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(300, 60, 121, 111))
         self.label.setStyleSheet("background-image:url(:/newPrefix/User-Login-128.png);")
@@ -276,7 +287,7 @@ class Ui_SignUp(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Signup"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "User Signup"))
         self.unameLbl.setText(_translate("MainWindow", "USERNAME"))
         self.signupLbl.setText(_translate("MainWindow", "SIGNUP"))
         self.unameInp.setPlaceholderText(_translate("MainWindow", "username"))
@@ -288,8 +299,8 @@ class Ui_SignUp(object):
         self.contactInp.setPlaceholderText(_translate("MainWindow", "contact"))
         self.emailInp.setPlaceholderText(_translate("MainWindow", "email"))
         self.contactLbl.setText(_translate("MainWindow", "CONTACT"))
-        self.resetBtn.setText(_translate("MainWindow", "RESET"))
-        self.member1Lbl.setText(_translate("MainWindow", "MEMBER 1"))
+        self.resetBtn.setText(_translate("MainWindow", "Admin SignUp"))
+        self.member1Lbl.setText(_translate("MainWindow", "RELATIVE 1"))
         self.mem1NameLbl.setText(_translate("MainWindow", "NAME"))
         self.mem1NameInp.setPlaceholderText(_translate("MainWindow", "member 1 name"))
         self.mem1EmailLbl.setText(_translate("MainWindow", "EMAIL ID"))
@@ -298,7 +309,7 @@ class Ui_SignUp(object):
         self.mem2NameInp.setPlaceholderText(_translate("MainWindow", "member 2 name"))
         self.mem2EmailLbl.setText(_translate("MainWindow", "EMAIL ID"))
         self.mem2NameLbl.setText(_translate("MainWindow", "NAME"))
-        self.member2Lbl.setText(_translate("MainWindow", "MEMBER 2"))
+        self.member2Lbl.setText(_translate("MainWindow", "RELATIVE 2"))
         self.member1Lbl_3.setText(_translate("MainWindow", "USER"))
 
 
