@@ -19,10 +19,10 @@ class TwitterClient:
             print("just default tweeter accounts tweets")
 
         # keys and tokens from the Twitter Dev Console
-        CONSUMER_KEY = 'aCLcl8h15bhN196ZfZp0k5qqE'
-        CONSUMER_SECRET = 'HMH2s7JEKjZbwxBSauKOIawirdyl4FCA1cqzpPgfOZxjKWCJJ3'
-        ACCESS_TOKEN = '3196308522-rxqjP0NQyJcO7GdjzcJ6mNulQIVzlpasBRjyWSK'
-        ACCESS_SECRET = '1p2Do64h1gjYXRszujIjjB3Fsgy6vVUGuZcFUO5Zs4snp'
+        CONSUMER_KEY = ''
+        CONSUMER_SECRET = ''
+        ACCESS_TOKEN = ''
+        ACCESS_SECRET = ''
 
         auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
         auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
